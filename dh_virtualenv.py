@@ -124,13 +124,10 @@ class Deployment(object):
         """
         virtualenv_path = 'VIRTUAL_ENV="{0}"'.format(
             self.virtualenv_install_dir)
+        pattern = re.compile(r'^VIRTUAL_ENV=.*$', flags=re.M)
 
         with open(os.path.join(self.bin_dir, 'activate'), 'r+') as fh:
-            content = re.sub(
-                r'^VIRTUAL_ENV=.*$',
-                virtualenv_path,
-                fh.read(),
-                flags=re.M)
+            content = pattern.sub(virtualenv_path, fh.read())
             fh.seek(0)
             fh.write(content)
 

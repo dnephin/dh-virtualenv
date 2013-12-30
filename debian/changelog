@@ -1,3 +1,9 @@
+dh-virtualenv (0.6.1) unstable; urgency=low
+
+  * Fix virtualenv path in bin/activate
+
+ -- Daniel Nephin <dnephin@gmail.com>  Mon, 30 Dec 2013 16:22:23 -0700
+
 dh-virtualenv (0.6) unstable; urgency=low
 
   * Fix lintian errors

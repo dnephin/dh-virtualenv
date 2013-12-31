@@ -129,6 +129,7 @@ class Deployment(object):
         with open(os.path.join(self.bin_dir, 'activate'), 'r+') as fh:
             content = pattern.sub(virtualenv_path, fh.read())
             fh.seek(0)
+            fh.truncate()
             fh.write(content)
 
     def install_package(self):

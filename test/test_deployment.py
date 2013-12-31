@@ -233,7 +233,7 @@ def test_fix_activate_path():
         fh.write(textwrap.dedent("""
             other things
 
-            VIRTUAL_ENV="/this/path/is/wrong"
+            VIRTUAL_ENV="/this/path/is/wrong/and/longer/then/new/path"
 
             more other things
         """))
